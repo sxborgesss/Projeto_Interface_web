@@ -10,24 +10,22 @@ O objetivo é gerenciar tarefas de forma simples e intuitiva, permitindo **adici
 ---
 
 ## 🎨 Wireframe
-**Inserir Imagem do seu wireframe**
+
 
 O projeto foi desenvolvido com base em um **wireframe** previamente planejado
+<img width="2783" height="2143" alt="WireFrame" src="https://github.com/user-attachments/assets/32116cbd-e81c-48bc-9dc0-cbbdd2737793" />
 
 ---
 
 ## ⚙️ Funcionalidades Principais
 - ✅ Adicionar novas tarefas  
 - 🗑️ Excluir tarefas concluídas  
-- ✏️ Editar nomes de tarefas  
-- 🌙 Alternar entre tema claro/escuro (Descrever aqui as funcionalidades do seu app)
+- ✏️ Editar nomes de tarefas 
 
 
 ## 💻 Tecnologias Utilizadas
-> Descreva aqui quais as tecnologias utilizadas no projeto.
 
-- HTML, CSS e JavaScript  
-- (ou) Flutter / React Native / outra tecnologia utilizada
+- HTML, CSS.
 
 ## 🚀 Como Executar o Projeto
-> Insira aqui orientações sobre como clonar o repositório e executar o projeto.
+> Para executar o codigo, se faz o download da pasta Projeto.Interface, abrir em um compilador de codigo e executar como .html.
