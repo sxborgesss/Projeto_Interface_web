@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tasks-page">
+    <header class="navbar">
+        <h2>Minhas Tarefas</h2>
+    </header>
+     
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="FILTRAR ATIVIDADES">
+        </div>
+
+        <section class="tasks-section pending-tasks">
+            <h3>TAREFAS PENDENTES</h3>
+            <div class="task-item pending">
+                <a href="tarefaPendente.html" class="task-name-link">TAREFAS 4</a>
+                <span>!</span>
+            </div>
+            <div class="task-item pending">
+                <span>TAREFAS 5</span>
+                <span>!</span>
+            </div>
+            <div class="task-item pending">
+                <span>TAREFAS 6</span>
+                <span>!</span>
+            </div>
+            <div class="show-more">
+                <span>+ MOSTRAR MAIS</span>
+            </div>
+        </section>
+
+        <section class="tasks-section concluded-tasks">
+            <h3>TAREFAS CONCLUÍDAS</h3>
+            <div class="task-item checked">
+                <a href="tarefa.html" class="task-name-link">TAREFAS 1</a>
+                <span>✔</span>
+            </div>
+            <div class="task-item checked">
+                <span>TAREFAS 2</span>
+                <span>✔</span>
+            </div>
+            <div class="task-item checked">
+                <span>TAREFAS 3</span>
+                <span>✔</span>
+            </div>
+        </section>
+    </div>
+    <footer class="fixed-footer-actions">
+        <a href="CriarTarefa.html" class="footer-btn add-btn">
+            + ADICIONAR MAIS TAREFAS
+        </a>
+        <a href="estatisticas.html" class="footer-btn stats-btn">
+            📊 ESTATÍSTICAS
+        </a>
+    </footer>
+</body>
+</html>

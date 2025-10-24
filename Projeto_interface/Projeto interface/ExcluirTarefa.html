@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="delete-confirmation-page">
+    <header class="navbar">
+        <a href="tarefa.html" class="back-img-btn">
+            <img src="img/icone-voltar.png" alt="Voltar">
+        </a>
+        
+        <h2>Excluir Tarefa</h2>
+        
+    </header>
+
+    <div class="container">
+        <div class="detail-box delete-confirmation-box">
+            
+            <h3>CONFIRMAR EXCLUSÃO</h3>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 16px;">
+                Você tem certeza que deseja excluir a tarefa Tarefa 1? 
+            </p>
+
+            <div class="action-buttons" style="flex-direction: row; gap: 15px;">
+                <button type="button" class="btn-action delete-btn" onclick="window.location.href='MinhasTarefas.html'">
+                    SIM, EXCLUIR TAREFA
+                </button>
+                
+                <button type="button" class="btn-action edit-btn" onclick="window.location.href='tarefa.html'">
+                    CANCELAR
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,744 @@
+/* Variáveis de Cores (baseadas nas imagens) */
+:root {
+    --primary-color: #3f51b5; /* Azul Escuro */
+    --secondary-color: #4CAF50; /* Verde (para Concluído/Sucesso) */
+    --background-light: #87b8e6; /* Fundo geral claro */
+    --background-dark: #37474F; /* Fundo de caixas escuras */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --input-bg: #EAEAEA;
+    --high-priority: #F44336; /* Vermelho */
+    --medium-priority: #FFC107; /* Amarelo */
+    --low-priority: #4CAF50; /* Verde */
+}
+
+/* --- ESTILOS GERAIS DE PÁGINA --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #87b8e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--primary-color);
+    height: 60px; /* Simula a barra de status/cabeçalho da imagem */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    /* Mantém o padding do topo para o navbar fixo */
+    padding: 20px; 
+    padding-top: 80px; 
+    /* Garante que o container não seja muito largo, simulando um celular */
+    max-width: 400px; 
+    width: 100%;
+    /* Centraliza o container na página */
+    margin: 0 auto; 
+}
+
+/* --- BOTÕES E ELEMENTOS DE FORMULÁRIO --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    /* REGRAS ADICIONADAS/MODIFICADAS: */
+    text-align: center;
+    display: block; /* Garante que o link ocupe toda a linha */
+}
+
+/* Para a tela de CADASTRO especificamente, onde o botão precisa estar no meio */
+.cadastro-box form {
+    /* Define o formulário como um contêiner flexível */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente os itens filhos (incluindo o botão) */
+}
+
+/* Ajuste específico para o botão no cadastro (para não ter 100% da largura, se você quiser menor) */
+.cadastro-box .btn-primary {
+    width: auto; /* Deixa o botão com a largura do conteúdo + padding */
+    padding: 12px 30px; /* Aumenta o padding para o botão parecer mais com o da imagem */
+    margin: 15px auto 0; /* Centraliza com margin e garante o espaçamento */
+}
+
+.btn-secondary {
+    background-color: #9E9E9E; /* Cinza */
+    color: var(--text-light);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input, .input-group textarea {
+width: 100%;
+    /* Diminui o padding interno do campo */
+    padding: 8px 10px; 
+    border: none;
+    background-color: var(--input-bg);
+    border-radius: 5px;
+    /* Diminui o tamanho da fonte */
+    font-size: 15px;
+}
+
+/* ================================================= */
+/* --- ESTILOS ESPECÍFICOS PARA PÁGINA DE EDIÇÃO/CRIAÇÃO (.create-task-page) --- */
+/* ================================================= */
+/* ================================================= */
+/* --- DENTRO DO BLOCO .create-task-page (.create-task-page) --- */
+/* ================================================= */
+
+/* 4. Botões de Ação (Salvar/Cancelar) - REFINADO FINALMENTE */
+
+.create-task-page .form-actions {
+    display: flex; 
+    margin-top: 15px; 
+    gap: 8px; 
+    width: 100%;
+    /* Adicionado box-sizing aqui para consistência */
+    box-sizing: border-box; 
+}
+
+.create-task-page .form-actions .btn-primary, 
+.create-task-page .form-actions .btn-secondary,
+.create-task-page .form-actions a, /* Incluindo a tag A explicitamente */
+.create-task-page .form-actions button { /* Incluindo a tag button explicitamente */
+    /* Garante que o padding e a borda não alterem o tamanho total */
+    box-sizing: border-box; 
+    
+    /* ESSENCIAL 1: Força o tamanho base para zero */
+    flex-basis: 0; 
+    /* ESSENCIAL 2: Faz com que ambos cresçam igualmente */
+    flex-grow: 1; 
+
+    /* Garante que o link A se comporte como o botão e ocupe o espaço */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    /* Estilos de compactação */
+    padding: 8px 12px; 
+    font-size: 13px; 
+    text-align: center;
+}
+/* Remova a regra .create-task-page .form-actions a.btn-primary se ainda estiver no seu CSS */
+
+/* --- PÁGINAS DE LOGIN E CADASTRO --- */
+.login-page, .cadastro-page {
+    /* Mantido: fundo e centralização da caixa escura na tela */
+    background-color: #87b8e6; /* Azul claro do fundo */
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-page .header, .cadastro-page .header {
+    display: none;
+}
+
+.login-box, .cadastro-box {
+    background-color: var(--background-dark);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    /* Alterado: Removemos o text-align: center aqui para que os rótulos possam ficar à esquerda */
+    position: relative;
+    /* Adicionado: Centraliza o bloco da caixa na tela (se necessário, embora o flexbox do body já faça isso) */
+    margin: auto; 
+}
+
+.login-box h1, .cadastro-box h1 {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 24px;
+    /* Mantido: Centraliza apenas o título "LOGIN" / "CADASTRO" */
+    text-align: center;
+}
+
+.login-box .input-group label, .cadastro-box .input-group label {
+    color: var(--text-light);
+    /* Adicionado: Garante que os rótulos estejam à esquerda */
+    text-align: left;
+}
+
+/* Alteração no Input Group: Aumentar o espaçamento lateral para simular o "meio" */
+.input-group {
+    margin-bottom: 20px;
+    /* Adicionado: Espaçamento horizontal interno para dar a impressão de que os campos estão mais ao centro */
+    padding: 0 10px; 
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light); /* Corrigi para var(--text-light) como na imagem */
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Ajuste nos links de Login para garantir que estejam centralizados */
+.forgot-password, .register-link {
+     color: #87b8e6;
+    text-align: center; 
+    margin-top: 15px;
+    /* Adicionado padding para centralizar o texto dentro da caixa, assim como os inputs */
+    padding: 0 10px;
+}
+.register-link {
+    text-align: center; 
+    margin-top: 25px; /* Mantém o espaçamento original */
+    padding: 0 10px;
+}
+
+/* 1. Define todo o texto do parágrafo (incluindo "Não tenho conta?") como branco. */
+.register-link p {
+    color: var(--text-light); 
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.register-link p a {
+    color: #87b8e6; /* Azul claro (cor do fundo para destaque) */
+    font-weight: bold; /* Adiciona negrito para maior visibilidade */
+    text-decoration: underline; /* Adiciona sublinhado se preferir, ou 'none' para remover */
+}
+
+
+
+/* --- PÁGINA MINHAS TAREFAS (LISTA) --- */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 20px;
+    display: flex;
+    /* MUDANÇA PRINCIPAL: Centraliza o conteúdo horizontalmente */
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 400px; 
+    z-index: 10;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* AJUSTE PARA O CONTEÚDO PRINCIPAL */
+/* Adiciona espaço na parte inferior do contêiner para que o conteúdo não fique escondido atrás do footer fixo */
+.container {
+    padding: 20px;
+    padding-top: 80px; 
+    /* Aumente o padding-bottom para dar espaço para o novo rodapé fixo (aprox. 100px) */
+    padding-bottom: 100px; 
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* NOVO: Espaçador para garantir que o conteúdo não fique sob o rodapé */
+.spacer {
+    /* Altura igual à altura do seu rodapé fixo, mais um pouco de margem */
+    height: 60px; 
+}
+
+
+/* NOVO FOOTER FIXO COM BOTÕES */
+.fixed-footer-actions {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px; /* Limita à largura do seu container */
+    background-color: transparent; /* Fundo transparente (os botões terão suas cores) */
+    padding: 10px 20px; /* Espaçamento interno */
+    display: flex; /* Permite que os botões fiquem lado a lado */
+    gap: 10px; /* Espaço entre os botões */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave no topo */
+    z-index: 50;
+}
+
+.footer-btn {
+    /* Estilo base para os dois botões */
+    flex-grow: 1; /* Garante que os botões dividam o espaço igualmente */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+/* Estilo do botão ADICIONAR (igual ao anterior) */
+.footer-btn.add-btn {
+    background-color: var(--text-light);
+    color: var(--background-dark);
+}
+
+/* Estilo do botão ESTATÍSTICAS (Novo destaque) */
+.footer-btn.stats-btn {
+    background-color: var(--secondary-color); /* Usa a cor Verde/Sucesso */
+    color: var(--text-light); /* Texto branco */
+}
+
+.footer-btn:hover {
+    opacity: 0.9;
+}
+
+/* --- NOVO ESTILO PARA O BOTÃO DE VOLTAR COM IMAGEM --- */
+.back-img-btn {
+    /* Posição Absoluta na Navbar */
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Mantém a distância da borda */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    
+    /* Tamanho do Área Clicável (maior para toque) */
+    width: 48px;  /* Tamanho ideal para o círculo da imagem */
+    height: 48px; /* Tamanho ideal para o círculo da imagem */
+    
+    /* Efeito Clicável (Em Evidência) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    border-radius: 50%; /* Garante que a área clicável seja circular */
+    overflow: hidden; /* Garante que a imagem não vaze do círculo se for maior */
+    
+    display: flex; /* Centraliza a imagem dentro do link */
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 20; /* Garante que fique acima do h2 */
+}
+
+.back-img-btn img {
+    /* Garante que a imagem preencha o espaço do botão */
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; /* Ajusta a imagem sem cortá-la */
+}
+
+.back-img-btn:hover {
+    transform: translateY(-50%) scale(1.05); /* Efeito de zoom ao clicar/tocar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar h2 {
+    font-size: 18px;
+    font-weight: normal;
+    /* MUDANÇA SECUNDÁRIA: Garante que o texto h2 esteja centralizado */
+    text-align: center;
+    /* Ajuste de margem para compensar o espaço ocupado pelo botão de voltar */
+    margin-right: 30px; 
+}
+
+/* NOVO: Reposiciona o botão de voltar para a esquerda sem afetar o fluxo de centralização do h2 */
+.nav-icon.back-icon {
+    position: absolute;
+    left: 20px; /* Ajuste conforme o padding da navbar */
+}
+
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-bar {
+    margin-bottom: 25px;
+    padding: 5px 0;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.tasks-section {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tasks-section h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+}
+
+.task-item:last-of-type {
+    border-bottom: none;
+}
+
+.task-item span:first-child {
+    opacity: 0.8;
+}
+
+.task-item.checked span:last-child {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.task-item.pending span:last-child {
+    color: var(--high-priority);
+    font-weight: bold;
+}
+
+.show-more {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.show-more span {
+    font-size: 14px;
+    cursor: pointer;
+    color: #90CAF9; /* Azul claro para o link */
+}
+
+.add-task {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-task a {
+    text-decoration: none;
+    color: var(--background-dark);
+    font-weight: bold;
+    background-color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+/* --- PÁGINAS CRIAR E DETALHES DA TAREFA --- */
+.task-form, .detail-box {
+    background-color: var(--background-dark);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--text-light);
+}
+
+.input-group {
+    margin-bottom: 15px; /* Diminui de 20px para 15px */
+}
+
+.task-form .input-group label {
+    color: var(--text-light);
+}
+
+.priority-group {
+    margin-bottom: 20px;
+}
+
+.priority-group label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.priority-options {
+    display: flex;
+    gap: 10px;
+}
+
+.priority-btn {
+    flex-grow: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+}
+
+.priority-btn::after {
+    content: '☐';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.priority-btn.active {
+    background-color: var(--medium-priority);
+    color: var(--background-dark);
+    border-color: var(--medium-priority);
+}
+
+.priority-btn.active::after {
+    content: '✔';
+    color: var(--background-dark);
+}
+
+.priority-btn.high { background-color: var(--high-priority); }
+.priority-btn.medium { background-color: var(--medium-priority); }
+.priority-btn.low { background-color: var(--low-priority); }
+
+
+.date-time-group {
+    position: relative;
+}
+
+.date-time-group .date-input {
+    padding-right: 40px;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 35px; /* Ajuste para o centro vertical do input */
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+
+/* Detalhes da Tarefa */
+.detail-box h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-box p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.detail-item span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.detail-item strong {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.priority-high {
+    background-color: var(--high-priority);
+}
+
+.status-selection {
+    margin: 30px 0;
+}
+
+.status-selection h3 {
+    border-bottom: none;
+}
+
+.status-option {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.status-check {
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+.status-check-pendente {
+
+    color: var(--high-priority); 
+
+    font-size: 28px; 
+
+    font-weight: 900; 
+
+    text-shadow: 0 0 5px rgba(244, 67, 54, 0.5); 
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.create-btn{
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.edit-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.delete-btn {
+    background-color: var(--high-priority);
+    color: var(--text-light);
+}
+
+/* --- PÁGINA ESTATÍSTICAS --- */
+.productivity-section h3, .weekly-stats h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.progress-bar-group {
+    margin-bottom: 15px;
+}
+
+.progress-bar-group .label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 15px;
+    border-radius: 7px;
+    background-color: #E0E0E0; /* Cor de fundo da barra */
+    transition: width 0.5s;
+}
+
+.filled-progress {
+    background-color: var(--secondary-color); /* Verde */
+}
+
+.unfilled-progress {
+    background-color: var(--high-priority); /* Vermelho/Laranja */
+}
+
+.weekly-stats {
+    margin-top: 30px;
+}
+
+.chart-container {
+    background-color: var(--text-light);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.bar {
+    width: 12%;
+    border-radius: 5px 5px 0 0;
+    background-color: #90CAF9; /* Azul claro para contraste */
+}
+
+.bar-blue {
+    background-color: var(--primary-color);
+}
+
+.bar-dark-blue {
+    background-color: #3f51b5; /* Azul mais escuro (simulando a barra superior no gráfico) */
+}
+.task-name-link {
+    /* Define a cor do texto para o branco padrão da seção */
+    color: var(--text-light); 
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none; 
+    /* Adiciona opacidade, simulando o estilo do seu span original */
+    opacity: 0.8; 
+}
+
+/* Opcional: Garante que todos os nomes de tarefas que eram <span>s tenham o novo estilo de <a> */
+.task-item span:first-child {
+    display: block; /* Mantenha o display para que a regra de opacidade continue funcionando nos outros <span>s */
+    opacity: 0.8;
+}

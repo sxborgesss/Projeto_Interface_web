@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="create-task-page">
+    <header class="navbar">
+        <a href="tarefa.html" class="back-img-btn">
+            <img src="img/icone-voltar.png" alt="Voltar">
+        </a>
+        
+        <h2>Editar Tarefa</h2>
+        
+    </header>
+
+    <div class="container">
+        <div class="task-form">
+            <div class="input-group">
+                <label for="titulo">TÍTULO DA TAREFA</label>
+                <input type="text" id="titulo" value="Tarefa" required> 
+            </div>
+
+            <div class="input-group">
+                <label for="descricao">DESCRIÇÃO DA TAREFA</label>
+                <textarea id="descricao" rows="4">**************.</textarea> 
+            </div>
+
+            <div class="priority-group">
+                <label>PRIORIDADE</label>
+                <div class="priority-options">
+                    <button type="button" class="priority-btn high active">ALTA</button>
+                    <button type="button" class="priority-btn medium">MÉDIA</button>
+                    <button type="button" class="priority-btn low">BAIXA</button>
+                </div>
+            </div>
+
+            <div class="input-group date-time-group">
+                <label for="data">DATA</label>
+                <input type="date" id="data" class="date-input" value="2025-08-17" required> 
+                <span class="calendar-icon">📅</span>
+            </div>
+            
+            <div class="input-group">
+                <label for="hora">HORA</label>
+                <input type="time" id="hora" value="20:00" required>
+            </div>
+
+            <div class="action-buttons" style="flex-direction: row; gap: 15px;">
+            <a href="tarefa.html" type="button" class="btn-action edit-btn" >SALVAR ALTERAÇÕES</a>
+            <button type="button" class="btn-action delete-btn" onclick="window.location.href='tarefa.html'">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Tarefa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="create-task-page">
+    <header class="navbar">
+        <a href="MInhasTarefas.html" class="back-img-btn">
+            <img src="img/icone-voltar.png" alt="Voltar">
+        </a>
+        <h2>Criar Tarefas</h2>
+
+    </header>
+
+    <div class="container">
+        <form class="task-form">
+            <div class="input-group">
+                <label for="titulo">TÍTULO DA TAREFA</label>
+                <input type="text" id="titulo">
+            </div>
+
+            <div class="priority-group">
+                <label>PRIORIDADE</label>
+                <div class="priority-options">
+                    <button type="button" class="priority-btn low">BAIXA</button>
+                    <button type="button" class="priority-btn medium ">MÉDIA</button>
+                    <button type="button" class="priority-btn high">ALTA</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="descricao">DESCRIÇÃO</label>
+                <textarea id="descricao" rows="3"></textarea>
+            </div>
+
+            <div class="input-group date-time-group">
+                <label>DATA/HORA</label>
+                <input type="text" class="date-input" placeholder="01/01/2025 09:00">
+                <span class="calendar-icon">📅</span>
+            </div>
+
+            <div class="form-actions">
+                <a href="MInhasTarefas.html"class="btn-action delete-btn">CANCELAR</a>
+                
+                <a href="MInhasTarefas.html" class="btn-action create-btn">SALVAR</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
